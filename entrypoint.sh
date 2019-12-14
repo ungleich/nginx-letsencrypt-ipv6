@@ -53,6 +53,8 @@ server {
     server_name ${dnsname};
 
     root ${wwwroot};
+
+    include /etc/nginx/conf.d/${dnsname}-*.conf;
 }
 EOF
 
