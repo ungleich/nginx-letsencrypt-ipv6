@@ -61,7 +61,14 @@ EOF
 # create empty file - can be overriden by others
 touch /etc/nginx/https.conf
 
-echo Welcome to ${dnsname} running with IPv6+LetsEncrypt > ${wwwroot}/index.html
+cat > "${wwwroot}/index.html" <<EOF
+Welcome to ${dnsname} running with IPv6+LetsEncrypt.
+
+Find more about fully automated docker containers with letsencrypt certificates on
+
+https://ungleich.ch/u/blog/fully-automated-ssl-certificates-for-docker/
+EOF
+
 
 # restart and run now with cert
 pkill nginx
