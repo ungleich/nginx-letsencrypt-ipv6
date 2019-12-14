@@ -76,4 +76,10 @@ pkill nginx
 # wait until old process is gone
 sleep 2
 
-nginx -g "daemon off;"
+nginx
+
+if [ -x /entrypoint-post-https.sh ]; then
+    /entrypoint-post-https.sh
+fi
+
+sleep infinity

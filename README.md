@@ -53,6 +53,12 @@ If you want to extend the https server, simply overwrite
 **/etc/nginx/https.conf**. It is by default empty and only exists to
 be overwritten. It is included in the https block and lets you define
 proxy or other configurations that you need.
+As this file is only included by the generated https server, you can
+safely create it in your Dockerfile.
+
+If you want start anything **after** the certificate was retrieved and
+the https server is up and running, put your code into
+**/entrypoint-post-https.sh**. Note: It should be executable.
 
 ## More information
 
