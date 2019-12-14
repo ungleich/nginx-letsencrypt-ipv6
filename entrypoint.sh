@@ -6,7 +6,7 @@ dnsname=$(echo $expanded_addr | sed 's/:/-/g').has-a.name
 
 echo Getting certificate for $dnsname
 
-wwwroot=/var/www/${dnsname}
+wwwroot=/var/www/https
 
 mkdir -p "${wwwroot}"
 
