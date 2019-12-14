@@ -53,3 +53,8 @@ If you want to extend the https server, simply overwrite
 **/etc/nginx/https.conf**. It is by default empty and only exists to
 be overwritten. It is included in the https block and lets you define
 proxy or other configurations that you need.
+
+## More information
+
+Read more about this on the
+[ungleich blog](https://ungleich.ch/u/blog/fully-automated-ssl-certificates-for-docker/).
