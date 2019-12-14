@@ -25,7 +25,7 @@ reached from anywhere in the world.
 This container uses the domain **has-a.name**, which gives a
 name to every IPv6 address.
 
-Checkout how
+Read more about how
 [has-a.name](https://ungleich.ch/u/blog/has-a-name-for-every-ipv6-address/) works.
 
 ## How to use
@@ -46,4 +46,10 @@ Welcome to 2a0a-e5c1-0111-0777-0000-0242-ac11-0004.has-a.name running with IPv6+
 
 ## How to extend it
 
-TBD
+The http server part usually does not need to be modified, as it only
+serves letsencrypt requests and redirects everything else to https.
+
+If you want to extend the https server, simply overwrite
+**/etc/nginx/https.conf**. It is by default empty and only exists to
+be overwritten. It is included in the https block and lets you define
+proxy or other configurations that you need.

@@ -54,9 +54,12 @@ server {
 
     root ${wwwroot};
 
-    include /etc/nginx/conf.d/${dnsname}-*.conf;
+    include /etc/nginx/https.conf;
 }
 EOF
+
+# create empty file - can be overriden by others
+touch /etc/nginx/https.conf
 
 echo Welcome to ${dnsname} running with IPv6+LetsEncrypt > ${wwwroot}/index.html
 
