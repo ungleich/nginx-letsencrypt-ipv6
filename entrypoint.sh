@@ -84,4 +84,5 @@ if [ -x /entrypoint-post-https.sh ]; then
     /entrypoint-post-https.sh
 fi
 
-sleep infinity
+# == sleep infinity, however infinity is not supported in this image!
+cat
