@@ -61,14 +61,16 @@ EOF
 # create empty file - can be overriden by others
 touch /etc/nginx/https.conf
 
-cat > "${wwwroot}/index.html" <<EOF
+# Do not overwrite if external volume is used!
+if [ ! -e ${wwwroot}/index.html ]; then
+    cat > "${wwwroot}/index.html" <<EOF
 Welcome to ${dnsname} running with IPv6+LetsEncrypt.
 
 Find more about fully automated docker containers with letsencrypt certificates on
 
 https://ungleich.ch/u/blog/fully-automated-ssl-certificates-for-docker/
 EOF
-
+fi
 
 # restart and run now with cert
 pkill nginx
