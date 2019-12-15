@@ -85,4 +85,7 @@ if [ -x /entrypoint-post-https.sh ]; then
 fi
 
 # == sleep infinity, however infinity is not supported in this image!
-cat
+# cat -- works if stdin does not close
+
+# wait forever by tailing /dev/null - also nice
+tail -f /dev/null
