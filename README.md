@@ -44,6 +44,14 @@ With this information, you can now connect to your container:
 Welcome to 2a0a-e5c1-0111-0777-0000-0242-ac11-0004.has-a.name running with IPv6+LetsEncrypt
 ```
 
+If you just want to expose a directory via https from the host, you
+can mount a volume at **/var/www/https** with the **-v** parameter:
+
+```
+docker run -v /path/to/mywebroot:/var/www/https -d ungleich/nginx-letsencrypt-ipv6
+```
+
+
 ## How to extend it
 
 The http server part usually does not need to be modified, as it only
